@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skull-Spin</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Layout */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f7fa;
+    }
+
+    .auth-container {
+      display: flex;
+      flex: 1;
+    }
+
+    .auth-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .signup-box {
+      background: #fff;
+      border-right: 2px solid #eee;
+    }
+
+    .login-box {
+      background: #fafafa;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .auth-container {
+        flex-direction: column;
+      }
+      .signup-box, .login-box {
+        border: none;
+        border-bottom: 2px solid #eee;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Signup Left -->
+    <div class="auth-box signup-box">
+      <h2>Create Account</h2>
+      <label for="name">Full Name</label>
+      <input id="name" type="text" placeholder="Enter your name" />
+
+      <label for="username">Username</label>
+      <input id="username" type="text" placeholder="Choose a username" />
+
+      <label for="signupEmail">Email</label>
+      <input id="signupEmail" type="email" placeholder="Enter your email" />
+
+      <label for="signupPassword">Password</label>
+      <input id="signupPassword" type="password" placeholder="Enter password" />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" type="password" placeholder="Confirm password" />
+
+      <label for="refCode">Referral Code (Optional)</label>
+      <input id="refCode" type="text" placeholder="Enter referral code" />
+
+      <button id="signupBtn">Sign Up</button>
+      <p class="note">Already have an account? Use the login section →</p>
+    </div>
+
+    <!-- Login Right -->
+    <div class="auth-box login-box">
+      <h2>Login</h2>
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" type="email" placeholder="Enter your email" />
+
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" placeholder="Enter password" />
+
+      <button id="loginBtn">Login</button>
+      <p class="note">Don’t have an account? Use the signup section ←</p>
+    </div>
+  </div>
+
+  <!-- Firebase Auth check (keeps logged-in users away from auth page) -->
+  <script type="module" src="auth.js"></script>
+</body>
+</html>
