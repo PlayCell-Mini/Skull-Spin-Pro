@@ -649,7 +649,7 @@ function ensureWithdrawModal() {
     try {
       const q = query(collection(db, "withdrawals"), where("uid", "==", currentUser.uid), where("status", "==", "pending"));
       const snap = await getDocs(q);
-      if (!snap.empty) { errDiv.textContent = "⚠️ You already have a pending withdrawal."; errDiv.style.display = "block"; return; }
+      if (!snap.empty) { errDiv.textContent = "⚠️ You already have a pending withdrawal request."; errDiv.style.display = "block"; return; }
     } catch (err) {
       console.error(err); errDiv.textContent = "❌ Unable to check pending withdrawals."; errDiv.style.display = "block"; return;
     }
