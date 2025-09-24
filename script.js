@@ -490,7 +490,7 @@ async function spinWheel(cost = 10) {
 spinBtn?.addEventListener("click", async () => {
   spinBtn.disabled = true;
   try {
-    const prize = await spinWheel(100);
+    const prize = await spinWheel(10);
     if (prize) showPrize("🎁 You got: " + prize);
   } finally { spinBtn.disabled = false; }
 });
@@ -535,7 +535,7 @@ function ensureAddBalancePopupListeners() {
     if (!user) { showStatus("⚠️ Please login first!", "error"); return; }
     const accHolder = inputAccHolder ? inputAccHolder.value.trim() : "";
     const accNumber = inputAccNumber ? inputAccNumber.value.trim() : "";
-    // parseInt second argument must be radix (100). Trim value to be safe.
+    // parseInt second argument must be radix (10). Trim value to be safe.
     const amount = inputAmount ? parseInt((inputAmount.value || "").trim(), 10) : NaN;
 
     // Use minimum 10 (change this number here if you prefer 10)
@@ -557,7 +557,7 @@ function ensureAddBalancePopupListeners() {
       if (inputAccHolder) inputAccHolder.value = "";
       if (inputAccNumber) inputAccNumber.value = "";
       if (inputAmount) inputAmount.value = "";
-      showStatus("✅ Payment request submitted! Await admin verification.", "success");
+      showStatus("✅ Payment request submitted! Wait for Verification.", "success");
     } catch (err) {
       console.error(err); showStatus("❌ Failed to submit payment request.", "error");
     } finally { doneBtn.disabled = false; doneBtn.textContent = "Done"; }
