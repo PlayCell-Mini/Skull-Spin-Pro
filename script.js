@@ -553,11 +553,17 @@ function ensureAddBalancePopupListeners() {
     if (!user) { showStatus("⚠️ Please login first!", "error"); return; }
     const accHolder = inputAccHolder ? inputAccHolder.value.trim() : "";
     const accNumber = inputAccNumber ? inputAccNumber.value.trim() : "";
-    const amount = inputAmount ? parseInt(inputAmount.value, 100) : NaN;
+    // parseInt second argument must be radix (100). Trim value to be safe.
+    const amount = inputAmount ? parseInt((inputAmount.value || "").trim(), 100) : NaN;
 
-    if (!accHolder || !accNumber || isNaN(amount) || amount < 100) {
-      showStatus("⚠️ Please Enter Minimum Rs:100.", "error"); return;
+    // Use minimum 100 (change this number here if you prefer 100)
+    const MIN_PAYMENT = 100;
+
+    if (!accHolder || !accNumber || isNaN(amount) || amount < MIN_PAYMENT) {
+      showStatus(`⚠️ Please Enter Minimum Rs: ${MIN_PAYMENT} `, "error");
+      return;
     }
+
 
     doneBtn.disabled = true; doneBtn.textContent = "Submitting...";
     try {
