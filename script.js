@@ -553,10 +553,10 @@ function ensureAddBalancePopupListeners() {
     if (!user) { showStatus("⚠️ Please login first!", "error"); return; }
     const accHolder = inputAccHolder ? inputAccHolder.value.trim() : "";
     const accNumber = inputAccNumber ? inputAccNumber.value.trim() : "";
-    const amount = inputAmount ? parseInt(inputAmount.value, 10) : NaN;
+    const amount = inputAmount ? parseInt(inputAmount.value, 100) : NaN;
 
-    if (!accHolder || !accNumber || isNaN(amount) || amount < 200) {
-      showStatus("⚠️ Fill all fields correctly. Min 200 PKR.", "error"); return;
+    if (!accHolder || !accNumber || isNaN(amount) || amount < 100) {
+      showStatus("⚠️ Fill all fields correctly. Min 100 PKR.", "error"); return;
     }
 
     doneBtn.disabled = true; doneBtn.textContent = "Submitting...";
