@@ -345,24 +345,7 @@ function ensureFreeSpinButton() {
     }
   }
 
-  if (mobileMenu) {
-    const mobileActions = mobileMenu.querySelector(".mobile-actions");
-    if (mobileActions && !mobileFreeSpinBtn) {
-      mobileFreeSpinBtn = document.getElementById("mobileFreeSpinBtn");
-      if (!mobileFreeSpinBtn) {
-        mobileFreeSpinBtn = document.createElement("button");
-        mobileFreeSpinBtn.id = "mobileFreeSpinBtn";
-        mobileFreeSpinBtn.type = "button";
-        mobileFreeSpinBtn.className = "";
-        mobileFreeSpinBtn.style.marginTop = "6px";
-        mobileFreeSpinBtn.addEventListener("click", () => {
-          try { toggleMobileMenu(); } catch(e){}
-          useFreeSpin();
-        });
-        mobileActions.appendChild(mobileFreeSpinBtn);
-      }
-    }
-  }
+
 
   try {
     const refBtn = spinBtn || multiSpinBtn || document.querySelector("button");
