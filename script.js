@@ -897,3 +897,14 @@ ensureWithdrawModal();
 ensureReferPopupListeners();
 ensureFreeSpinButton();
 resizeCanvasToContainer();
+
+
+// ================= Referral Popup Cancel =================
+const referPopup = document.getElementById("referPopup");
+const referCancelBtn = document.getElementById("referCancel");
+
+if (referPopup && referCancelBtn) {
+  referCancelBtn.addEventListener("click", () => {
+    referPopup.style.display = "none";
+  });
+}
