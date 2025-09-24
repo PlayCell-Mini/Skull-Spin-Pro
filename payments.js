@@ -22,13 +22,13 @@ const RECEIVER = {
  * Add a new transaction to Firestore & update balance
  * @param {string} accountHolder - Account Holder Name (user input)
  * @param {string} accountNumber - Account Number (user input)
- * @param {number} amount - Amount user entered (>=100 PKR)
+ * @param {number} amount - Amount user entered (>=10 PKR)
  */
 export async function createTransaction(accountHolder, accountNumber, amount) {
   try {
     const user = auth.currentUser;
     if (!user) throw new Error("No authenticated user found!");
-    const MIN_PAYMENT = 100;
+    const MIN_PAYMENT = 10;
     if (!accountHolder || !accountNumber || !amount || amount < MIN_PAYMENT) {
       throw new Error(`⚠️ Please enter minimum Rs: ${MIN_PAYMENT}`);
     }

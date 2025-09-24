@@ -425,7 +425,7 @@ function disableAllSpinButtons(disabled) {
 }
 
 /* ======== UPDATED spinWheel: decide target index via pickPrizeIndex() ======== */
-async function spinWheel(cost = 100) {
+async function spinWheel(cost = 10) {
   if (cost > 0 && balance < cost) {
     showStatus("⚠️ Not enough balance!", "error"); return null;
   }
@@ -557,7 +557,7 @@ function ensureAddBalancePopupListeners() {
     const amount = inputAmount ? parseInt((inputAmount.value || "").trim(), 10) : NaN;
 
     // Use minimum 100 (change this number here if you prefer 100)
-    const MIN_PAYMENT = 100;
+    const MIN_PAYMENT = 10;
 
     if (!accHolder || !accNumber || isNaN(amount) || amount < MIN_PAYMENT) {
       showStatus(`⚠️ Please Enter Minimum Rs: ${MIN_PAYMENT} `, "error");
