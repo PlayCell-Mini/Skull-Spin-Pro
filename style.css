@@ -197,11 +197,11 @@ canvas {
 
 /* Referral Popup Cancel Button */
 #referCancel {
-  padding: 6px 14px;
+  padding: 6px 8px;
   font-size: 14px;
   border-radius: 6px;
   background: #ccc;
-  color: #000;
+  color: #ffffff;
   cursor: pointer;
   border: none;
 }
