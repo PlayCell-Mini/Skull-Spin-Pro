@@ -29,7 +29,7 @@ export async function createTransaction(accountHolder, accountNumber, amount) {
     const user = auth.currentUser;
     if (!user) throw new Error("No authenticated user found!");
 
-    if (!accountHolder || !accountNumber || !amount || amount < 100) {
+    if (accountHolder || accountNumber || !amount || amount < 100) {
       throw new Error("⚠️ Please fill all fields (Min 100 PKR).");
     }
 
@@ -114,5 +114,5 @@ function showStatus(msg, color) {
   // Hide after 5 seconds
   setTimeout(() => {
     statusMsg.style.display = "none";
-  }, 3000);
+  }, 5000);
 }
