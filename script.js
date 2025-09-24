@@ -355,7 +355,6 @@ function ensureFreeSpinButton() {
         mobileFreeSpinBtn.type = "button";
         mobileFreeSpinBtn.className = "";
         mobileFreeSpinBtn.style.marginTop = "6px";
-        mobileFreeSpinBtn.textContent = `Free-Spin: ${freeSpins || 0}`;
         mobileFreeSpinBtn.addEventListener("click", () => {
           try { toggleMobileMenu(); } catch(e){}
           useFreeSpin();
