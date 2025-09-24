@@ -556,7 +556,7 @@ function ensureAddBalancePopupListeners() {
     // parseInt second argument must be radix (100). Trim value to be safe.
     const amount = inputAmount ? parseInt((inputAmount.value || "").trim(), 10) : NaN;
 
-    // Use minimum 100 (change this number here if you prefer 100)
+    // Use minimum 10 (change this number here if you prefer 10)
     const MIN_PAYMENT = 10;
 
     if (!accHolder || !accNumber || isNaN(amount) || amount < MIN_PAYMENT) {
