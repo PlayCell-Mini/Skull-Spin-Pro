@@ -556,7 +556,7 @@ function ensureAddBalancePopupListeners() {
     const amount = inputAmount ? parseInt(inputAmount.value, 100) : NaN;
 
     if (!accHolder || !accNumber || isNaN(amount) || amount < 100) {
-      showStatus("⚠️ Please Enter Minimum 100 PKR.", "error"); return;
+      showStatus("⚠️ Please Enter Minimum Rs:100.", "error"); return;
     }
 
     doneBtn.disabled = true; doneBtn.textContent = "Submitting...";
