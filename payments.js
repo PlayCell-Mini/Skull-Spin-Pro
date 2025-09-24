@@ -22,15 +22,15 @@ const RECEIVER = {
  * Add a new transaction to Firestore & update balance
  * @param {string} accountHolder - Account Holder Name (user input)
  * @param {string} accountNumber - Account Number (user input)
- * @param {number} amount - Amount user entered (>=200 PKR)
+ * @param {number} amount - Amount user entered (>=100 PKR)
  */
 export async function createTransaction(accountHolder, accountNumber, amount) {
   try {
     const user = auth.currentUser;
     if (!user) throw new Error("No authenticated user found!");
 
-    if (!accountHolder || !accountNumber || !amount || amount < 200) {
-      throw new Error("⚠️ Please fill all fields (Min 200 PKR).");
+    if (!accountHolder || !accountNumber || !amount || amount < 100) {
+      throw new Error("⚠️ Please fill all fields (Min 100 PKR).");
     }
 
     // Generate unique reference
@@ -114,5 +114,5 @@ function showStatus(msg, color) {
   // Hide after 5 seconds
   setTimeout(() => {
     statusMsg.style.display = "none";
-  }, 5000);
+  }, 3000);
 }
