@@ -898,13 +898,14 @@ ensureReferPopupListeners();
 ensureFreeSpinButton();
 resizeCanvasToContainer();
 
+document.addEventListener("DOMContentLoaded", () => {
+  const referPopup = document.getElementById("referPopup");
+  const referCancelBtn = document.getElementById("referCancel");
 
-// ================= Referral Popup Cancel =================
-const referPopup = document.getElementById("referPopup");
-const referCancelBtn = document.getElementById("referCancel");
+  if (referPopup && referCancelBtn) {
+    referCancelBtn.addEventListener("click", () => {
+      referPopup.style.display = "none";
+    });
+  }
+});
 
-if (referPopup && referCancelBtn) {
-  referCancelBtn.addEventListener("click", () => {
-    referPopup.style.display = "none";
-  });
-}
