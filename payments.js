@@ -30,7 +30,7 @@ export async function createTransaction(accountHolder, accountNumber, amount) {
     if (!user) throw new Error("No authenticated user found!");
 
     if (accountHolder || accountNumber || !amount || amount < 100) {
-      throw new Error("⚠️ Please fill all fields (Min 100 PKR).");
+      throw new Error("⚠️ Please Enter Minimum Rs:100.");
     }
 
     // Generate unique reference
