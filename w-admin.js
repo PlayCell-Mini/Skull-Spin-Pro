@@ -31,6 +31,8 @@ onSnapshot(q, async (snapshot) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${email}</td>
+      <td>${data.accountHolder || "-"}</td>
+      <td>${data.accountNumber || "-"}</td>
       <td>${data.amount} PKR</td>
       <td>${data.status}</td>
       <td>${data.createdAt?.toDate().toLocaleString() || "N/A"}</td>
