@@ -204,7 +204,7 @@ canvas {
   cursor: pointer;
   border: none;
   height: 38px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 #referCancel:hover {
