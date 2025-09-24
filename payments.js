@@ -29,7 +29,7 @@ export async function createTransaction(accountHolder, accountNumber, amount) {
     const user = auth.currentUser;
     if (!user) throw new Error("No authenticated user found!");
 
-    if (accountHolder || accountNumber || !amount || amount < 100) {
+    if (!accountHolder || !accountNumber || !amount || amount < 100) {
       throw new Error("⚠️ Please Enter Minimum Rs:100.");
     }
 
