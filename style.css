@@ -197,7 +197,7 @@ canvas {
 
 /* Referral Popup Cancel Button */
 #referCancel {
-  padding: 8px 8px;
+  padding: 8px 18px;
   font-size: 14px;
   border-radius: 6px;
   background: #ccc;
@@ -207,5 +207,5 @@ canvas {
 }
 
 #referCancel:hover {
-  background: #bbb;
+  background: #ccc;
 }
