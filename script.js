@@ -552,8 +552,8 @@ function ensureAddBalancePopupListeners() {
     const user = currentUser;
     if (!user) { showStatus("⚠️ Please login first!", "error"); return; }
     const accHolder = inputAccHolder ? inputAccHolder.value.trim() : "";
-    const accNumber = inputAccNumber ? inputAccNumber.value.trim() : "03";
-    const amount = inputAmount ? parseInt(inputAmount.value, 100) : 100;
+    const accNumber = inputAccNumber ? inputAccNumber.value.trim() : "";
+    const amount = inputAmount ? parseInt(inputAmount.value, 100) : NaN;
 
     if (!accHolder || !accNumber || isNaN(amount) || amount < 100) {
       showStatus("⚠️ Please Enter Minimum Rs:100.", "error"); return;
