@@ -433,7 +433,7 @@ async function spinWheel(cost = 10) {
 
     const rounds = 6 + Math.floor(Math.random() * 3); // full rotations
     const spinAngle = rounds * 360 + desiredDeg;
-    const spinTimeTotal = 4000 + Math.floor(Math.random() * 600); // ms (slight randomness)
+    const spinTimeTotal = 3800 + Math.floor(Math.random() * 600); // ms (slight randomness)
     const startTime = performance.now();
 
     if (spinSound) {
