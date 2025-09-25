@@ -325,13 +325,7 @@ async function useFreeSpin() {
 
 function ensureFreeSpinButton() {
   if (!freeSpinBtn) {
-        // Button ko select karo
-    const adButton = document.getElementById("adButton");
 
-    // Button par click hone par ad link open karo
-    adButton.addEventListener("click", () => {
-      window.open("https://otieu.com/4/9931806", "_blank"); 
-    });
 
     freeSpinBtn = document.getElementById("freeSpinBtn");
     if (!freeSpinBtn) {
@@ -899,3 +893,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+        // Button ko select karo
+    const adButton = document.getElementById("adButton");
+
+    // Button par click hone par ad link open karo
+    adButton.addEventListener("click", () => {
+      window.open("https://otieu.com/4/9931806", "_blank"); 
+    });
