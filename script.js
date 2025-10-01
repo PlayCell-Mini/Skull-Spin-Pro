@@ -898,5 +898,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Button par click hone par ad link open karo
     adButton.addEventListener("click", () => {
-      window.open("https://otieu.com/4/9931806", "_blank"); 
+      window.open("https://otieu.com/4/6809064", "_blank"); 
     });
