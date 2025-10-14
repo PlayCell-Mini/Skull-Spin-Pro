@@ -805,7 +805,7 @@ function ensureReferPopupListeners() {
   if (copyReferralBtn) {
     copyReferralBtn.addEventListener("click", async () => {
       if (!currentUser) { showStatus("⚠️ Please login first!", "error"); return; }
-      const base = "https://adil-hayyat.github.io/Skull-Spin/auth.html";
+      const base = "https://skull-spin-pro.netlify.app/auth.html";
       const referralLink = `${base}?ref=${encodeURIComponent(currentUser.uid)}`;
 
       const origText = copyReferralBtn.textContent;
